@@ -5,7 +5,7 @@ using TMPro;
 
 public class DisplayManager : MonoBehaviour
 {
-    public static bool gameover;
+    public static bool gameover = false;
     public GameObject goPanel;
 
     int adInt;
@@ -18,13 +18,13 @@ public class DisplayManager : MonoBehaviour
     void Start()
     {
 
-            admanager.instance.RequestAdinter();
-
+        gameover = false;
         SC.enabled = false;
         Time.timeScale = 1;
-        gameover = false;
         isStarted = false;
+            admanager.instance.RequestAdinter();
         adInt = Mathf.RoundToInt(Random.Range(0f,3f));
+
 
 
     }
